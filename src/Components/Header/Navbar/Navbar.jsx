@@ -47,7 +47,7 @@ const Navbar = () => {
     }, [theme]);
 
     return (
-        <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 font-primary bg-slate-100 dark:bg-black duration-300">
+        <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 font-primary bg-slate-100 dark:bg-black duration-300 mx-auto">
             <div className="w-full px-1 md:px-7 mx-auto flex flex-wrap items-center justify-between">
                 <div className="w-full relative flex items-center justify-between lg:w-auto lg:static lg:block lg:justify-start">
                     <div className='flex items-center gap-4 mr-5'>

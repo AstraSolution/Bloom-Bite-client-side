@@ -1,11 +1,16 @@
+// ------------------------------ //
+// --------Imported Items-------- //
+// ------------------------------ //
 
-import AboutUs from '../../Components/AboutUs/AboutUs';
+import TitleBanner from "../../Shared/Title Banner/TitleBanner";
 
 const AboutUsPage = () => {
     return (
-        <div>
-            <AboutUs></AboutUs>
-        </div>
+        <>
+            <section className="container mx-auto">
+                <TitleBanner Title={`ABOUT US`} Track={`HOME > ABOUT`}></TitleBanner>
+            </section>
+        </>
     );
 };
 

@@ -1,4 +1,3 @@
-import { useLoaderData } from 'react-router-dom';
 import Banner from '../../Components/Header/Banner/Banner'
 import WhyUs from '../../Components/WhyUs/WhyUs';
 
@@ -6,7 +5,7 @@ import WhyUs from '../../Components/WhyUs/WhyUs';
 const Home = () => {
 
     return (
-        <div>
+        <div className=''>
             <Banner></Banner>
             <WhyUs></WhyUs>
         </div>

@@ -4,7 +4,7 @@
 
 const Footer = () => {
     return (
-        <div className="dark:border-t dark:border-gray-800 duration-300">
+        <div className="dark:border-t dark:border-gray-800 duration-300 container mx-auto">
             <footer
                 className="flex flex-col items-center bg-slate-100 dark:bg-[#090b11] text-center text-black dark:text-white duration-300">
                 <div className="container px-6 pt-6">
