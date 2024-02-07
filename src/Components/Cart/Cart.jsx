@@ -1,4 +1,6 @@
-import React, { useContext } from "react";
+/* eslint-disable react/prop-types */
+
+import { useContext } from "react";
 import { AuthContext } from "../../services/Firebase/AuthProvider";
 import Swal from "sweetalert2";
 
