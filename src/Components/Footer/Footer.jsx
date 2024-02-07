@@ -17,7 +17,7 @@ const Footer = () => {
                         className="relative block h-[600px] fill-white"
                     ></path>
                 </svg>
-            <div className="grid lg:grid-cols-4 gap-20 sm:grid-cols-1 p-5 ml-5">
+            <div className="grid lg:grid-cols-4 gap-20 sm:grid-cols-1 p-5 ml-5 place-items-center">
                 <div className="flex flex-col gap-5">
                     <h2 className="text-3xl text-pink-500">Footer</h2>
                     <p>
