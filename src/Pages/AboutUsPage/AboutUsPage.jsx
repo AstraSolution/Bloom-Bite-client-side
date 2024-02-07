@@ -3,7 +3,7 @@ import AboutUs from '../../Components/AboutUs/AboutUs';
 
 const AboutUsPage = () => {
     return (
-        <div>
+        <div className=''>
             <AboutUs></AboutUs>
         </div>
     );

@@ -8,12 +8,7 @@ import ContactUsPage from "../Pages/ContactUsPage/ContactUsPage";
 import CartPage from "../Pages/CartPage/CartPage";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import AboutUsPage from "../Pages/AboutUsPage/AboutUsPage";
-
-
-
-
-
-
+import AddFood from "../Pages/AddFood/AddFood";
 const router = createBrowserRouter([
     {
         path: '/',
@@ -39,6 +34,10 @@ const router = createBrowserRouter([
             {
                 path: 'about-us',
                 element: <AboutUsPage></AboutUsPage>
+            },
+            {
+                path: 'addFood',
+                element: <AddFood></AddFood>
             },
             {
                 path: 'cart',
