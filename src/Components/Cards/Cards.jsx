@@ -1,4 +1,4 @@
-import "./Style.css";
+import "./Card.css";
 const Cards = () => {
   return (
     <section className="  h-screen flex justify-center items-center gap-x-16 text-white">
