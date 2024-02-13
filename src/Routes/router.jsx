@@ -2,14 +2,13 @@ import { createBrowserRouter } from "react-router-dom";
 import PrivateRoute from "./PrivateRoute";
 import Root from "../Layout/Root";
 import Home from "../Pages/HomePage/Home";
-import RegisterPage from "../Pages/RegisterPage/RegisterPage";
-import LoginPage from "../Pages/LoginPage/LoginPage";
-import ContactUsPage from "../Pages/ContactUsPage/ContactUsPage";
 import CartPage from "../Pages/CartPage/CartPage";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import AboutUsPage from "../Pages/AboutUsPage/AboutUsPage";
 import UserDashboard from "../Layout/Dashboard/Dashboard";
 import AddFood from "../Pages/AddFood/AddFood";
+import ComingSoonPage from "../Pages/Coming Soon Page/ComingSoonPage";
+import Reserve from "../Pages/Reserve/Reserve";
 
 
 const router = createBrowserRouter([
@@ -23,24 +22,16 @@ const router = createBrowserRouter([
                 element: <Home></Home>,
             },
             {
-                path: 'register',
-                element: <RegisterPage></RegisterPage>
-            },
-            {
-                path: 'login',
-                element: <LoginPage></LoginPage>
-            },
-            {
-                path: 'contact-us',
-                element: <ContactUsPage></ContactUsPage>
-            },
-            {
                 path: 'about-us',
                 element: <AboutUsPage></AboutUsPage>
             },
             {
                 path: 'addFood',
                 element: <AddFood></AddFood>
+            },
+            {
+                path: 'reserve',
+                element: <Reserve></Reserve>
             },
             {
                 path: 'cart',
@@ -62,6 +53,10 @@ const router = createBrowserRouter([
                 element:<Home></Home>
             }
         ]
+    },
+    {
+        path: '/coming-soon',
+        element: <ComingSoonPage></ComingSoonPage>
     }
 ])
 

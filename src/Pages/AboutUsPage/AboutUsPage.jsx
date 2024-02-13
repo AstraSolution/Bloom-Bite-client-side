@@ -9,11 +9,13 @@ import { GiFarmer } from "react-icons/gi";
 import { MdOutlineInsertInvitation } from "react-icons/md";
 
 import TitleBanner from "../../Shared/Title Banner/TitleBanner";
+import Construction from "../../Shared/Construction/Construction";
+import Testimonial from "../../Components/Testimonial/Testimonial";
 
 const AboutUsPage = () => {
     return (
         <>
-            <section className="container mx-auto font-primary">
+            <section className="mx-auto font-primary">
                 <TitleBanner Title={`ABOUT US`} Track={`HOME > ABOUT`}></TitleBanner>
             </section>
             <section className="flex flex-col lg:flex-row justify-center items-center font-primary mt-14 md:mt-20 mx-4 gap-9">
@@ -98,6 +100,12 @@ const AboutUsPage = () => {
                         </div>
                     </div>
                 </div>
+            </section>
+            {/* <section className="mx-4">
+                <Construction></Construction>
+            </section> */}
+            <section>
+                <Testimonial></Testimonial>
             </section>
         </>
     );
