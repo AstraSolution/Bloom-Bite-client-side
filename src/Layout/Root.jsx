@@ -7,10 +7,10 @@ import ScrollToTop from "../Components/ScrollToTop/ScrollToTop";
 const Root = () => {
     return (
         <div>
-            <div className="fixed top-0 w-full z-50">
+            <div className="fixed left-0 right-0 top-0 bottom-0 w-full z-50 container mx-auto">
                 <Navbar></Navbar>
             </div>
-            <div className="mt-[87px]">
+            <div className="mt-[87px] container mx-auto relative">
             <ScrollToTop />
                 <Outlet></Outlet>
             </div>

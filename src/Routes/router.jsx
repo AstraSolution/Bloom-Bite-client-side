@@ -8,9 +8,14 @@ import ContactUsPage from "../Pages/ContactUsPage/ContactUsPage";
 import CartPage from "../Pages/CartPage/CartPage";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import AboutUsPage from "../Pages/AboutUsPage/AboutUsPage";
+import UserDashboard from "../Layout/Dashboard/Dashboard";
 import AddFood from "../Pages/AddFood/AddFood";
+
 import UpdateFood from "../Components/UpdateFood/UpdateFood";
 import FeedBack from "../Pages/FeedBack/FeedBack";
+=======
+
+
 const router = createBrowserRouter([
     {
         path: '/',
@@ -58,6 +63,16 @@ const router = createBrowserRouter([
                 ),
             },
 
+        ]
+    },
+    {
+        path: '/dashboard',
+        element: <UserDashboard></UserDashboard>,
+        children: [
+            {
+                path:'/dashboard',
+                element:<Home></Home>
+            }
         ]
     }
 ])
