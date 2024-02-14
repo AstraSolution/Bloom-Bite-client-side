@@ -9,6 +9,8 @@ import CartPage from "../Pages/CartPage/CartPage";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import AboutUsPage from "../Pages/AboutUsPage/AboutUsPage";
 import AddFood from "../Pages/AddFood/AddFood";
+import UpdateFood from "../Components/UpdateFood/UpdateFood";
+import FeedBack from "../Pages/FeedBack/FeedBack";
 const router = createBrowserRouter([
     {
         path: '/',
@@ -38,6 +40,14 @@ const router = createBrowserRouter([
             {
                 path: 'addFood',
                 element: <AddFood></AddFood>
+            },
+            {
+                path: 'updateFood',
+                element: <UpdateFood></UpdateFood>
+            },
+            {
+                path: 'feedback',
+                element: <FeedBack></FeedBack>
             },
             {
                 path: 'cart',

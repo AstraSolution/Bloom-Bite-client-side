@@ -2,7 +2,7 @@ import { FaGithub, FaInstagram, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 const Footer = () => {
     const Year = new Date().getFullYear();
     return (
-        <footer className="relative mt-8 text-white">
+        <footer className="relative text-white">
         <div className="absolute top-0 bg-black left-0 w-[100%] overflow-hidden">
             <svg
                     data-name="Layer 1"
