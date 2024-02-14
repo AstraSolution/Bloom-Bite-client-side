@@ -7,6 +7,9 @@ const Reserve = () => {
             <section>
                 <TitleBanner Title={`RESERVE`} Track={`HOME > RESERVE`}></TitleBanner>
             </section>
+            <section className="mx-4">
+                <Reservation></Reservation>
+            </section>
             
         </>
     );
