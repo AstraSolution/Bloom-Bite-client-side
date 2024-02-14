@@ -163,14 +163,14 @@ const Navbar = () => {
 
                 <a className="nav-item lg:my-1 xl:mx-3 flex items-center text-sm xl:text-base uppercase font-semibold  text-black dark:text-white duration-300 hover:opacity-75 border-2 border-[#FF9D00] rounded-md">
                   <NavLink
-                    to="/add-product"
+                    to="/feedback"
                     className={({ isActive, isPending }) =>
                       isPending ? "pending" : isActive ? "text-[#FF9D00]" : ""
                     }
                   >
                     <p className="flex items-center mx-2 xl:mx-3 my-1 xl:my-2">
                       <span className="text-xl md:text-2xl mr-2 ">+</span>
-                      <span>ADD PRODUCT</span>
+                      <span>Feedback</span>
                     </p>
                   </NavLink>
                 </a>
