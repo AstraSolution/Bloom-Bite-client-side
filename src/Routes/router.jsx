@@ -8,6 +8,7 @@ import AddFood from "../Pages/AddFood/AddFood";
 import ComingSoonPage from "../Pages/Coming Soon Page/ComingSoonPage";
 import Reserve from "../Pages/Reserve/Reserve";
 import ShoppingCart from "../Pages/Shopping Cart/ShoppingCart";
+import Menu from "../Pages/Menu/Menu";
 
 
 const router = createBrowserRouter([
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
             {
                 path: 'cart',
                 element: <ShoppingCart></ShoppingCart>
+            },
+            {
+                path: 'menu',
+                element: <Menu></Menu>
             },
 
         ]
