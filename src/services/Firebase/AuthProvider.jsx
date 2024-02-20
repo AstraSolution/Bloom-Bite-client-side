@@ -9,7 +9,9 @@ import {
     signInWithEmailAndPassword,
     signOut,
     GoogleAuthProvider,
-    signInWithPopup
+    signInWithPopup,
+    TwitterAuthProvider,
+    FacebookAuthProvider
 } from "firebase/auth";
 
 export const AuthContext = createContext(null);
@@ -18,6 +20,9 @@ export const AuthContext = createContext(null);
 const auth = getAuth(app);
 
 const googleProvider = new GoogleAuthProvider();
+const twitterProvider = new TwitterAuthProvider();
+const facebookProvider = new FacebookAuthProvider();
+
 
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState()
@@ -27,24 +32,50 @@ const AuthProvider = ({ children }) => {
         setLoading(true);
         return signInWithPopup(auth, googleProvider);
     };
+    const TwitterSignIn = async () => {
+        setLoading(true);
+        try {
+          const result = await signInWithPopup(auth, twitterProvider);
+          const user = result.user;
+          setUser(user);
+          setLoading(false);
+          return result;
+        } catch (error) {
+          console.error(error);
+          setLoading(false);
+          throw error;
+        }
+      };
+
+
+      const FaceBookSignIn = async () => {
+        setLoading(true);
+        try {
+          const result = await signInWithPopup(auth, facebookProvider);
+          const user = result.user;
+          setUser(user);
+          setLoading(false);
+          return result;
+        } catch (error) {
+          console.error(error);
+          setLoading(false);
+          throw error;
+        }
+      };
+
 
     const signUp = (email, password) => {
         setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password);
     };
-
     const signIn = (email, password) => {
         setLoading(true);
         return signInWithEmailAndPassword(auth, email, password)
     }
-
-
     const logout =()=> {
         setLoading(true)
         return signOut(auth);
     }
-
-
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
             console.log("state changed");
@@ -56,9 +87,6 @@ const AuthProvider = ({ children }) => {
            return unsubscribe();
         })
     }, [])
-    
-
-
     const AuthInfo = {
         googleSignIn,
         signUp,
@@ -66,6 +94,8 @@ const AuthProvider = ({ children }) => {
         user,
         logout,
         loading,
+        TwitterSignIn,
+        FaceBookSignIn
     };
 
     return (

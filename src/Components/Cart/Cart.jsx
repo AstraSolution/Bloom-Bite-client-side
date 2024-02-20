@@ -1,89 +1,373 @@
-import React, { useContext } from "react";
-import { AuthContext } from "../../services/Firebase/AuthProvider";
-import Swal from "sweetalert2";
+// ------------------------------ //
+// --------Imported Items-------- //
+// ------------------------------ //
 
-const Cart = ({ cartItems, setCartItems }) => {
-    const { user } = useContext(AuthContext);
+import { Avatar, Badge, Button, Popover, Table } from 'keep-react'
+import { ArrowsDownUp, Crown, Cube, DotsThreeOutline, Pencil, Trash } from 'phosphor-react'
 
-    function capitalizeFirstLetter(str) {
-        return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
-    }
 
-    const UserCartItems = cartItems.filter(item => item.userEmail === user.email);
 
-    const handleDelete = (e, cartItemId) => {
-        e.preventDefault();
-        console.log(cartItemId);
-        Swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                fetch(`https://assignment-10-server-biymh8jny-shahreyar-rafis-projects.vercel.app/cartItems/${cartItemId}`, {
-                    method: 'DELETE'
-                })
-                    .then(res => res.json())
-                    .then(data => {
-                        console.log(data);
-                        if (data.deletedCount > 0) {
-                            Swal.fire(
-                                'Deleted!',
-                                'Item has been deleted.',
-                                'success'
-                            );
 
-                            const remaining = cartItems.filter(item => item._id !== cartItemId);
-                            setCartItems(remaining);
-                        }
-                    })
-                    .catch(error => {
-                        console.error('Error:', error);
-                    });
-            }
-        });
-    };
 
+const Cart = () => {
     return (
-        <div className='font-primary min-h-[80vh] flex items-center justify-center px-4 py-10 bg-[#090b11]'>
-            {UserCartItems.length > 0 ? (
-                <div>
-                    <div className="max-w-6xl grid grid-cols-1 xl:grid-cols-2 gap-4 mx-auto">
-                        {UserCartItems.map(cartItem => (
-                            <div key={cartItem._id} className="mx-auto max-w-md md:max-w-3xl bg-[#1e2127] rounded text-gray-100">
-                                <div className="h-full w-full flex flex-col items-center rounded-lg shadow md:flex-row md:max-w-xl dark:hover-bg-gray-700">
-                                    <img className=" object-cover w-full rounded-t-lg h-96 md:h-full md:w-60 md:rounded-none md:rounded-l-md" src={cartItem.photo} alt="" />
-                                    <div className="w-full">
-                                        <div className="flex flex-col justify between p-4 leading-normal">
-                                            <div className="mx-auto mb-5">
-                                                <h5 className="md:min-w-[300px] max-w-[300px] truncate  overflow-hidden mb-2 text-2xl font-medium text-gray-100">{cartItem.name}</h5>
-                                                <p className="text-sm text-slate-400 p-1 flex justify-between w-72 border-b border-[#353a4a]"><span className="">Brand:</span> <span className="">{capitalizeFirstLetter(cartItem.brand)}</span></p>
-                                                <p className="text-sm text-slate-400 p-1 flex justify-between w-72 border-b border-[#353a4a]"><span className="">Type:</span> <span className="">{cartItem.type}</span></p>
-                                                <p className="text-sm text-slate-400 p-1 flex justify-between w-72 border-b border-[#353a4a]"><span className="">Engine Type:</span> <span className="">{cartItem.engine_type}</span></p>
-                                                <p className="text-sm text-slate-400 p-1 flex justify-between w-72 border-b border-[#353a4a]"><span className="">Transmission:</span> <span className="">{cartItem.transmission}</span></p>
-                                                <p className="text-sm text-slate-400 p-1 flex justify-between w-72 border-b border-[#353a4a]"><span className="">Drive System:</span> <span className="">{cartItem.drive_system}</span></p>
-                                                <p className="text-sm text-slate-400 p-1 flex justify-between w-72 "><span className="">Price:</span> <span className="">${cartItem.price}</span></p>
-                                            </div>
-                                            <div className="mx-auto w-auto md:w-72">
-                                                <button onClick={(e) => handleDelete(e, cartItem._id)} className="bg-[#c9363f] hover-bg-[#f14e59] px-3 py-2 text-white text-sm rounded">Remove From Cart</button>
+        <>
+            <div className='overflow-x-scroll'>
+                <Table showCheckbox={true}>
+                    <Table.Caption>
+                        <div className="my-5 flex items-center justify-between px-6">
+                            <div className="flex items-center gap-5">
+                                <p className="text-body-1 font-semibold text-metal-600">Cash Out Transactions</p>
+                            </div>
+                            <div className="flex items-center gap-5">
+                                <Button type="outlineGray" size="sm">
+                                    <span className="pr-2">
+                                        <Cube size={24} />
+                                    </span>
+                                    New member
+                                </Button>
+                                <Button type="outlineGray" size="sm">
+                                    <span className="pr-2">
+                                        <Cube size={24} />
+                                    </span>
+                                    Search
+                                </Button>
+                            </div>
+                        </div>
+                    </Table.Caption>
+                    <Table.Head>
+                        <Table.HeadCell className="min-w-[290px]">
+                            <p className="text-body-6 font-medium text-metal-400">Type</p>
+                        </Table.HeadCell>
+                        <Table.HeadCell className="min-w-[183px]" icon={<ArrowsDownUp size={14} color="#8897AE" />}>
+                            Date
+                        </Table.HeadCell>
+                        <Table.HeadCell className="min-w-[160px]" icon={<ArrowsDownUp size={14} color="#8897AE" />}>
+                            Amount
+                        </Table.HeadCell>
+                        <Table.HeadCell className="min-w-[150px]" icon={<ArrowsDownUp size={14} color="#8897AE" />}>
+                            Status
+                        </Table.HeadCell>
+                        <Table.HeadCell className="min-w-[183px]" icon={<ArrowsDownUp size={14} color="#8897AE" />}>
+                            Received Date
+                        </Table.HeadCell>
+                        <Table.HeadCell className="min-w-[100px]" />
+                    </Table.Head>
+                    <Table.Body className="divide-gray-25 divide-y">
+                        <Table.Row className="bg-white">
+                            <Table.Cell>
+                                <div className="flex items-center gap-3">
+                                    <div className="flex items-center gap-4">
+                                        <div className="flex items-center gap-2">
+                                            <Avatar shape="circle" img="/images/company/paypal.png" size="md" />
+                                            <div>
+                                                <p className="-mb-0.5 text-body-4 font-medium text-metal-600">Paypal</p>
+                                                <span className="text-body-6 font-normal text-metal-500">Withdraw</span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            ) : (
-                <div className='h-[80vh] flex items-center justify-center'>
-                    <p className='text-2xl font-bold font-primary text-white'>Empty Cart</p>
-                </div>
-            )}
-        </div>
+                            </Table.Cell>
+                            <Table.Cell>
+                                <p className="text-body-5 font-medium text-metal-500">Jan 19, 2022</p>
+                                <p className="text-body-6 font-normal text-metal-500">3:45 pm</p>
+                            </Table.Cell>
+                            <Table.Cell>
+                                <p className="text-body-5 font-medium text-metal-500">$652.00</p>
+                            </Table.Cell>
+                            <Table.Cell>
+                                <div className="inline-block">
+                                    <Badge colorType="light" color="success" icon={<Crown size={18} weight="light" />} iconPosition="left">
+                                        Delivered
+                                    </Badge>
+                                </div>
+                            </Table.Cell>
+                            <Table.Cell>
+                                <p className="text-body-5 font-medium text-metal-500">Jan 19, 2022</p>
+                                <p className="text-body-6 font-normal text-metal-500">3:45 pm</p>
+                            </Table.Cell>
+                            <Table.Cell>
+                                <Popover showDismissIcon={false} showArrow={false} className="w-52 border border-metal-100 p-2">
+                                    <Popover.Container className="!mt-0 !block">
+                                        <ul>
+                                            <li className="rounded px-2 py-1 hover:bg-metal-100">
+                                                <button className="flex w-full items-center justify-between text-body-4 font-normal text-metal-600">
+                                                    <span>Delete</span>
+                                                    <span>
+                                                        <Trash />
+                                                    </span>
+                                                </button>
+                                            </li>
+                                            <li className="rounded px-2 py-1 hover:bg-metal-100">
+                                                <button className="flex w-full items-center justify-between text-body-4 font-normal text-metal-600">
+                                                    <span>Edit</span>
+                                                    <span>
+                                                        <Pencil />
+                                                    </span>
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    </Popover.Container>
+                                    <Popover.Action>
+                                        <Button type="outlineGray" size="xs" circle={true}>
+                                            <DotsThreeOutline size={14} color="#5E718D" weight="bold" />
+                                        </Button>
+                                    </Popover.Action>
+                                </Popover>
+                            </Table.Cell>
+                        </Table.Row>
+                        <Table.Row className="bg-white">
+                            <Table.Cell>
+                                <div className="flex items-center gap-3">
+                                    <div className="flex items-center gap-4">
+                                        <div className="flex items-center gap-2">
+                                            <Avatar shape="circle" img="/images/company/Visa.png" size="md" />
+                                            <div>
+                                                <p className="-mb-0.5 text-body-4 font-medium text-metal-600">Visa</p>
+                                                <span className="text-body-6 font-normal text-metal-500">Withdraw</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </Table.Cell>
+                            <Table.Cell>
+                                <p className="text-body-5 font-medium text-metal-500">Jan 10, 2023</p>
+                                <p className="text-body-6 font-normal text-metal-500">4:45 pm</p>
+                            </Table.Cell>
+                            <Table.Cell>
+                                <p className="text-body-5 font-medium text-metal-500">$534.00</p>
+                            </Table.Cell>
+                            <Table.Cell>
+                                <div className="inline-block">
+                                    <Badge colorType="light" color="success" icon={<Crown size={18} weight="light" />} iconPosition="left">
+                                        Delivered
+                                    </Badge>
+                                </div>
+                            </Table.Cell>
+                            <Table.Cell>
+                                <p className="text-body-5 font-medium text-metal-500">Jan 19, 2022</p>
+                                <p className="text-body-6 font-normal text-metal-500">3:45 pm</p>
+                            </Table.Cell>
+                            <Table.Cell>
+                                <Popover showDismissIcon={false} showArrow={false} className="w-52 border border-metal-100 p-2">
+                                    <Popover.Container className="!mt-0 !block">
+                                        <ul>
+                                            <li className="rounded px-2 py-1 hover:bg-metal-100">
+                                                <button className="flex w-full items-center justify-between text-body-4 font-normal text-metal-600">
+                                                    <span>Delete</span>
+                                                    <span>
+                                                        <Trash />
+                                                    </span>
+                                                </button>
+                                            </li>
+                                            <li className="rounded px-2 py-1 hover:bg-metal-100">
+                                                <button className="flex w-full items-center justify-between text-body-4 font-normal text-metal-600">
+                                                    <span>Edit</span>
+                                                    <span>
+                                                        <Pencil />
+                                                    </span>
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    </Popover.Container>
+                                    <Popover.Action>
+                                        <Button type="outlineGray" size="xs" circle={true}>
+                                            <DotsThreeOutline size={14} color="#5E718D" weight="bold" />
+                                        </Button>
+                                    </Popover.Action>
+                                </Popover>
+                            </Table.Cell>
+                        </Table.Row>
+                        <Table.Row className="bg-white">
+                            <Table.Cell>
+                                <div className="flex items-center gap-3">
+                                    <div className="flex items-center gap-4">
+                                        <div className="flex items-center gap-2">
+                                            <Avatar shape="circle" img="/images/company/stripe.png" size="md" />
+                                            <div>
+                                                <p className="-mb-0.5 text-body-4 font-medium text-metal-600">Stripe</p>
+                                                <span className="text-body-6 font-normal text-metal-500">Withdraw</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </Table.Cell>
+                            <Table.Cell>
+                                <p className="text-body-5 font-medium text-metal-500">Mar 12, 2023</p>
+                                <p className="text-body-6 font-normal text-metal-500">4:00 pm</p>
+                            </Table.Cell>
+                            <Table.Cell>
+                                <p className="text-body-5 font-medium text-metal-500">$123.00</p>
+                            </Table.Cell>
+                            <Table.Cell>
+                                <div className="inline-block">
+                                    <Badge colorType="light" color="success" icon={<Crown size={18} weight="light" />} iconPosition="left">
+                                        Delivered
+                                    </Badge>
+                                </div>
+                            </Table.Cell>
+                            <Table.Cell>
+                                <p className="text-body-5 font-medium text-metal-500">Jan 19, 2022</p>
+                                <p className="text-body-6 font-normal text-metal-500">3:45 pm</p>
+                            </Table.Cell>
+                            <Table.Cell>
+                                <Popover showDismissIcon={false} showArrow={false} className="w-52 border border-metal-100 p-2">
+                                    <Popover.Container className="!mt-0 !block">
+                                        <ul>
+                                            <li className="rounded px-2 py-1 hover:bg-metal-100">
+                                                <button className="flex w-full items-center justify-between text-body-4 font-normal text-metal-600">
+                                                    <span>Delete</span>
+                                                    <span>
+                                                        <Trash />
+                                                    </span>
+                                                </button>
+                                            </li>
+                                            <li className="rounded px-2 py-1 hover:bg-metal-100">
+                                                <button className="flex w-full items-center justify-between text-body-4 font-normal text-metal-600">
+                                                    <span>Edit</span>
+                                                    <span>
+                                                        <Pencil />
+                                                    </span>
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    </Popover.Container>
+                                    <Popover.Action>
+                                        <Button type="outlineGray" size="xs" circle={true}>
+                                            <DotsThreeOutline size={14} color="#5E718D" weight="bold" />
+                                        </Button>
+                                    </Popover.Action>
+                                </Popover>
+                            </Table.Cell>
+                        </Table.Row>
+                        <Table.Row className="bg-white">
+                            <Table.Cell>
+                                <div className="flex items-center gap-3">
+                                    <div className="flex items-center gap-4">
+                                        <div className="flex items-center gap-2">
+                                            <Avatar shape="circle" img="/images/company/western.png" size="md" />
+                                            <div>
+                                                <p className="-mb-0.5 text-body-4 font-medium text-metal-600">Western Union</p>
+                                                <span className="text-body-6 font-normal text-metal-500">Withdraw</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </Table.Cell>
+                            <Table.Cell>
+                                <p className="text-body-5 font-medium text-metal-500">Nov 23, 2023</p>
+                                <p className="text-body-6 font-normal text-metal-500">5:30 pm</p>
+                            </Table.Cell>
+                            <Table.Cell>
+                                <p className="text-body-5 font-medium text-metal-500">$434.00</p>
+                            </Table.Cell>
+                            <Table.Cell>
+                                <div className="inline-block">
+                                    <Badge colorType="light" color="success" icon={<Crown size={18} weight="light" />} iconPosition="left">
+                                        Delivered
+                                    </Badge>
+                                </div>
+                            </Table.Cell>
+                            <Table.Cell>
+                                <p className="text-body-5 font-medium text-metal-500">Jan 19, 2022</p>
+                                <p className="text-body-6 font-normal text-metal-500">3:45 pm</p>
+                            </Table.Cell>
+                            <Table.Cell>
+                                <Popover showDismissIcon={false} showArrow={false} className="w-52 border border-metal-100 p-2">
+                                    <Popover.Container className="!mt-0 !block">
+                                        <ul>
+                                            <li className="rounded px-2 py-1 hover:bg-metal-100">
+                                                <button className="flex w-full items-center justify-between text-body-4 font-normal text-metal-600">
+                                                    <span>Delete</span>
+                                                    <span>
+                                                        <Trash />
+                                                    </span>
+                                                </button>
+                                            </li>
+                                            <li className="rounded px-2 py-1 hover:bg-metal-100">
+                                                <button className="flex w-full items-center justify-between text-body-4 font-normal text-metal-600">
+                                                    <span>Edit</span>
+                                                    <span>
+                                                        <Pencil />
+                                                    </span>
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    </Popover.Container>
+                                    <Popover.Action>
+                                        <Button type="outlineGray" size="xs" circle={true}>
+                                            <DotsThreeOutline size={14} color="#5E718D" weight="bold" />
+                                        </Button>
+                                    </Popover.Action>
+                                </Popover>
+                            </Table.Cell>
+                        </Table.Row>
+                        <Table.Row className="bg-white">
+                            <Table.Cell>
+                                <div className="flex items-center gap-3">
+                                    <div className="flex items-center gap-4">
+                                        <div className="flex items-center gap-2">
+                                            <Avatar shape="circle" img="/images/company/mastercard.png" size="md" />
+                                            <div>
+                                                <p className="-mb-0.5 text-body-4 font-medium text-metal-600">Mastercard</p>
+                                                <span className="text-body-6 font-normal text-metal-500">Withdraw</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </Table.Cell>
+                            <Table.Cell>
+                                <p className="text-body-5 font-medium text-metal-500">Apr 23, 2023</p>
+                                <p className="text-body-6 font-normal text-metal-500">7:30 pm</p>
+                            </Table.Cell>
+                            <Table.Cell>
+                                <p className="text-body-5 font-medium text-metal-500">$786.00</p>
+                            </Table.Cell>
+                            <Table.Cell>
+                                <div className="inline-block">
+                                    <Badge colorType="light" color="success" icon={<Crown size={18} weight="light" />} iconPosition="left">
+                                        Delivered
+                                    </Badge>
+                                </div>
+                            </Table.Cell>
+                            <Table.Cell>
+                                <p className="text-body-5 font-medium text-metal-500">Jan 19, 2022</p>
+                                <p className="text-body-6 font-normal text-metal-500">3:45 pm</p>
+                            </Table.Cell>
+                            <Table.Cell>
+                                <Popover showDismissIcon={false} showArrow={false} className="w-52 border border-metal-100 p-2">
+                                    <Popover.Container className="!mt-0 !block">
+                                        <ul>
+                                            <li className="rounded px-2 py-1 hover:bg-metal-100">
+                                                <button className="flex w-full items-center justify-between text-body-4 font-normal text-metal-600">
+                                                    <span>Delete</span>
+                                                    <span>
+                                                        <Trash />
+                                                    </span>
+                                                </button>
+                                            </li>
+                                            <li className="rounded px-2 py-1 hover:bg-metal-100">
+                                                <button className="flex w-full items-center justify-between text-body-4 font-normal text-metal-600">
+                                                    <span>Edit</span>
+                                                    <span>
+                                                        <Pencil />
+                                                    </span>
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    </Popover.Container>
+                                    <Popover.Action>
+                                        <Button type="outlineGray" size="xs" circle={true}>
+                                            <DotsThreeOutline size={14} color="#5E718D" weight="bold" />
+                                        </Button>
+                                    </Popover.Action>
+                                </Popover>
+                            </Table.Cell>
+                        </Table.Row>
+                    </Table.Body>
+                </Table>
+            </div>
+        </>
     );
 };
 

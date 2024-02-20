@@ -1,17 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
-import PrivateRoute from "./PrivateRoute";
 import Root from "../Layout/Root";
 import Home from "../Pages/HomePage/Home";
-import RegisterPage from "../Pages/RegisterPage/RegisterPage";
-import LoginPage from "../Pages/LoginPage/LoginPage";
-import ContactUsPage from "../Pages/ContactUsPage/ContactUsPage";
-import CartPage from "../Pages/CartPage/CartPage";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import AboutUsPage from "../Pages/AboutUsPage/AboutUsPage";
-
-
-
-
+import UserDashboard from "../Layout/Dashboard/Dashboard";
+import AddFood from "../Pages/AddFood/AddFood";
 
 
 const router = createBrowserRouter([
@@ -25,31 +18,37 @@ const router = createBrowserRouter([
                 element: <Home></Home>,
             },
             {
-                path: 'register',
-                element: <RegisterPage></RegisterPage>
-            },
-            {
-                path: 'login',
-                element: <LoginPage></LoginPage>
-            },
-            {
-                path: 'contact-us',
-                element: <ContactUsPage></ContactUsPage>
-            },
-            {
                 path: 'about-us',
                 element: <AboutUsPage></AboutUsPage>
             },
             {
+                path: 'addFood',
+                element: <AddFood></AddFood>
+            },
+            {
                 path: 'cart',
-                element: (
-                    <PrivateRoute>
-                        <CartPage></CartPage>
-                    </PrivateRoute>
-                ),
+                element: <ShoppingCart></ShoppingCart>
+            },
+            {
+                path: 'menu',
+                element: <Menu></Menu>
             },
 
         ]
+    },
+    {
+        path: '/dashboard',
+        element: <UserDashboard></UserDashboard>,
+        children: [
+            {
+                path:'/dashboard',
+                element:<Home></Home>
+            }
+        ]
+    },
+    {
+        path: '/coming-soon',
+        element: <ComingSoonPage></ComingSoonPage>
     }
 ])
 
