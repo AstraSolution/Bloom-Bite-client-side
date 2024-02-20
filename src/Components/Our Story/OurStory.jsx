@@ -9,8 +9,8 @@ const OurStory = () => {
                     <p className="text-[12px] md:text-[14px] lg:text-[16px] leading-6 md:leading-7 lg:leading-9">There are many variations of passages of Lorem Ipsum available, but the to a majority have suffered alteration in some form, by injected humour, or find randomised words which don't look even slightly believable.</p>
                     <p className="text-[12px] md:text-[14px] lg:text-[16px] leading-6 md:leading-7 lg:leading-9">Over 20 years’ experience providing top quality house Booking rant and sell for your Amazing Dream & Make you Happy.</p>
                 </div>
-                <div className="flex-1">
-                    <img className="mx-auto" src="https://quomodosoft.com/html/reservq/assets/images/thumb/about-thumb.png" alt="" />
+                <div className="flex-1 " >
+                    <img className="mx-auto" src="https://quomodosoft.com/html/reservq/assets/images/thumb/about-thumb.png" alt=""  />
                 </div>
             </div>
         </>
