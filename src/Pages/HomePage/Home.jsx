@@ -1,6 +1,7 @@
 import Banner from '../../Components/Header/Banner/Banner'
 import Cards from '../../Components/Cards/Cards';
 import Subscribe from '../../Components/Subscribe/Subscribe';
+import CardDetails from '../../Components/CardDetails/CardDetails';
 
 
 const Home = () => {
@@ -12,6 +13,7 @@ const Home = () => {
             <section>
                 <Subscribe></Subscribe>
             </section>
+            <CardDetails></CardDetails>
         </div>
     );
 };
