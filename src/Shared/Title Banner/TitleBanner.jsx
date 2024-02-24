@@ -1,6 +1,12 @@
+import { FaAngleRight } from "react-icons/fa6";
+
+
+
+
 const TitleBanner = ({Title , Track , Location}) => {
 
     const Image = 'https://img.freepik.com/premium-photo/cut-barbecue-pizza-stone-board_220925-26389.jpg?w=1380'
+
 
     return (
         <>

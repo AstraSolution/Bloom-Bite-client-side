@@ -1,19 +1,16 @@
 import { createBrowserRouter } from "react-router-dom";
-import PrivateRoute from "./PrivateRoute";
 import Root from "../Layout/Root";
 import Home from "../Pages/HomePage/Home";
-import RegisterPage from "../Pages/RegisterPage/RegisterPage";
-import LoginPage from "../Pages/LoginPage/LoginPage";
-import ContactUsPage from "../Pages/ContactUsPage/ContactUsPage";
-import CartPage from "../Pages/CartPage/CartPage";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import AboutUsPage from "../Pages/AboutUsPage/AboutUsPage";
 import UserDashboard from "../Layout/Dashboard/Dashboard";
 import AddFood from "../Pages/AddFood/AddFood";
 
+
 import UpdateFood from "../Components/UpdateFood/UpdateFood";
 import FeedBack from "../Pages/FeedBack/FeedBack";
 import OurServices from "../Pages/OurServices/OurServices";
+
 
 
 
@@ -28,18 +25,6 @@ const router = createBrowserRouter([
                 element: <Home></Home>,
             },
             {
-                path: 'register',
-                element: <RegisterPage></RegisterPage>
-            },
-            {
-                path: 'login',
-                element: <LoginPage></LoginPage>
-            },
-            {
-                path: 'contact-us',
-                element: <ContactUsPage></ContactUsPage>
-            },
-            {
                 path: 'about-us',
                 element: <AboutUsPage></AboutUsPage>
             },
@@ -48,14 +33,11 @@ const router = createBrowserRouter([
                 element: <AddFood></AddFood>
             },
             {
-                path: 'updateFood',
-                element: <UpdateFood></UpdateFood>
+                path: 'cart',
+                element: <ShoppingCart></ShoppingCart>
             },
             {
-                path: 'feedback',
-                element: <FeedBack></FeedBack>
-            },
-            {
+
                 path: 'services',
                 element: <OurServices></OurServices>
             },
@@ -66,6 +48,10 @@ const router = createBrowserRouter([
                         <CartPage></CartPage>
                     </PrivateRoute>
                 ),
+
+                path: 'menu',
+                element: <Menu></Menu>
+
             },
 
         ]
@@ -79,6 +65,10 @@ const router = createBrowserRouter([
                 element:<Home></Home>
             }
         ]
+    },
+    {
+        path: '/coming-soon',
+        element: <ComingSoonPage></ComingSoonPage>
     }
 ])
 

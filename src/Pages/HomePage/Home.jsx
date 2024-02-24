@@ -1,6 +1,6 @@
 import Banner from '../../Components/Header/Banner/Banner'
-import WhyUs from '../../Components/WhyUs/WhyUs';
 import Cards from '../../Components/Cards/Cards';
+import Subscribe from '../../Components/Subscribe/Subscribe';
 import CardDetails from '../../Components/CardDetails/CardDetails';
 
 
@@ -9,8 +9,10 @@ const Home = () => {
     return (
         <div className=''>
             <Banner></Banner>
-            <WhyUs></WhyUs>
             <Cards></Cards>
+            <section>
+                <Subscribe></Subscribe>
+            </section>
             <CardDetails></CardDetails>
         </div>
     );

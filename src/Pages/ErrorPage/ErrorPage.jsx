@@ -1,5 +1,3 @@
-import React from 'react';
-import Error from '../../Components/Error/Error';
 import { Link } from 'react-router-dom';
 
 const ErrorPage = () => {
