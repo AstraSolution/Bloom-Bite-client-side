@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 const ErrorPage = () => {
     return (
         <>
-            <section className='min-h-screen flex flex-col lg:flex-row items-center justify-center  gap-5 font-primary container mx-auto' >
+            <section className='min-h-screen flex flex-col lg:flex-row items-center justify-center  gap-5 font-primary f mx-auto' >
                 <div className='text-center lg:text-left lg:ml-40  lg:flex-1 space-y-4 md:spacey-y-6 '>
                     <h1 className='text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold'>OPPS... You're Lost</h1>
                     <p className="text-[12px] md:text-[14px] lg:text-[16px] leading-6 md:leading-7 lg:leading-9">Uh oh, we can't seem to find the page you're looking for. <br />Try goring back to page or contact us for more information.</p>

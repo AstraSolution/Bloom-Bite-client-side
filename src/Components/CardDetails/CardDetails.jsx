@@ -52,9 +52,9 @@ const CardDetails = () => {
       const plusMinuceButton =
         "flex h-8 w-8 cursor-pointer items-center justify-center border duration-100 hover:bg-neutral-100 focus:ring-2 focus:ring-gray-500 active:ring-2 active:ring-gray-500";
       return (
-        <section className=" custom-styles container flex-grow mx-auto max-w-[1200px] border-b py-5 lg:grid lg:grid-cols-2 lg:py-10">
+        <section className=" custom-styles f flex-grow mx-auto max-w-[1200px] border-b py-5 lg:grid lg:grid-cols-2 lg:py-10">
           {/* image gallery */}
-          <div className="container mx-auto px-4">
+          <div className="f mx-auto px-4">
             <ReactImageGallery
               showBullets={false}
               showFullscreenButton={false}

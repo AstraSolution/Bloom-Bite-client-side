@@ -88,7 +88,7 @@ const Cart = () => {
                             </Table.Cell>
                             <Table.Cell>
                                 <Popover showDismissIcon={false} showArrow={false} className="w-52 border border-metal-100 p-2">
-                                    <Popover.Container className="!mt-0 !block">
+                                    <Popover.f className="!mt-0 !block">
                                         <ul>
                                             <li className="rounded px-2 py-1 hover:bg-metal-100">
                                                 <button className="flex w-full items-center justify-between text-body-4 font-normal text-metal-600">
@@ -107,7 +107,7 @@ const Cart = () => {
                                                 </button>
                                             </li>
                                         </ul>
-                                    </Popover.Container>
+                                    </Popover.f>
                                     <Popover.Action>
                                         <Button type="outlineGray" size="xs" circle={true}>
                                             <DotsThreeOutline size={14} color="#5E718D" weight="bold" />
@@ -150,7 +150,7 @@ const Cart = () => {
                             </Table.Cell>
                             <Table.Cell>
                                 <Popover showDismissIcon={false} showArrow={false} className="w-52 border border-metal-100 p-2">
-                                    <Popover.Container className="!mt-0 !block">
+                                    <Popover.f className="!mt-0 !block">
                                         <ul>
                                             <li className="rounded px-2 py-1 hover:bg-metal-100">
                                                 <button className="flex w-full items-center justify-between text-body-4 font-normal text-metal-600">
@@ -169,7 +169,7 @@ const Cart = () => {
                                                 </button>
                                             </li>
                                         </ul>
-                                    </Popover.Container>
+                                    </Popover.f>
                                     <Popover.Action>
                                         <Button type="outlineGray" size="xs" circle={true}>
                                             <DotsThreeOutline size={14} color="#5E718D" weight="bold" />
@@ -212,7 +212,7 @@ const Cart = () => {
                             </Table.Cell>
                             <Table.Cell>
                                 <Popover showDismissIcon={false} showArrow={false} className="w-52 border border-metal-100 p-2">
-                                    <Popover.Container className="!mt-0 !block">
+                                    <Popover.f className="!mt-0 !block">
                                         <ul>
                                             <li className="rounded px-2 py-1 hover:bg-metal-100">
                                                 <button className="flex w-full items-center justify-between text-body-4 font-normal text-metal-600">
@@ -231,7 +231,7 @@ const Cart = () => {
                                                 </button>
                                             </li>
                                         </ul>
-                                    </Popover.Container>
+                                    </Popover.f>
                                     <Popover.Action>
                                         <Button type="outlineGray" size="xs" circle={true}>
                                             <DotsThreeOutline size={14} color="#5E718D" weight="bold" />
@@ -274,7 +274,7 @@ const Cart = () => {
                             </Table.Cell>
                             <Table.Cell>
                                 <Popover showDismissIcon={false} showArrow={false} className="w-52 border border-metal-100 p-2">
-                                    <Popover.Container className="!mt-0 !block">
+                                    <Popover.f className="!mt-0 !block">
                                         <ul>
                                             <li className="rounded px-2 py-1 hover:bg-metal-100">
                                                 <button className="flex w-full items-center justify-between text-body-4 font-normal text-metal-600">
@@ -293,7 +293,7 @@ const Cart = () => {
                                                 </button>
                                             </li>
                                         </ul>
-                                    </Popover.Container>
+                                    </Popover.f>
                                     <Popover.Action>
                                         <Button type="outlineGray" size="xs" circle={true}>
                                             <DotsThreeOutline size={14} color="#5E718D" weight="bold" />
@@ -336,7 +336,7 @@ const Cart = () => {
                             </Table.Cell>
                             <Table.Cell>
                                 <Popover showDismissIcon={false} showArrow={false} className="w-52 border border-metal-100 p-2">
-                                    <Popover.Container className="!mt-0 !block">
+                                    <Popover.f className="!mt-0 !block">
                                         <ul>
                                             <li className="rounded px-2 py-1 hover:bg-metal-100">
                                                 <button className="flex w-full items-center justify-between text-body-4 font-normal text-metal-600">
@@ -355,7 +355,7 @@ const Cart = () => {
                                                 </button>
                                             </li>
                                         </ul>
-                                    </Popover.Container>
+                                    </Popover.f>
                                     <Popover.Action>
                                         <Button type="outlineGray" size="xs" circle={true}>
                                             <DotsThreeOutline size={14} color="#5E718D" weight="bold" />

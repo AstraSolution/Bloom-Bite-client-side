@@ -9,7 +9,7 @@ const Subscribe = () => {
 
     return (
         <>
-            <div style={{ background: `url('https://bsmedia.business-standard.com/_media/bs/img/article/2023-09/14/full/1694673859-4182.jpeg?im=FeatureCrop,size=(826,465)')`, backgroundRepeat: "no-repeat", backgroundSize: "cover" }} className="flex flex-col lg:flex-row items-center w-full mt-20 md:container mx-auto bg-no-repeat bg-cover text-white">
+            <div style={{ background: `url('https://bsmedia.business-standard.com/_media/bs/img/article/2023-09/14/full/1694673859-4182.jpeg?im=FeatureCrop,size=(826,465)')`, backgroundRepeat: "no-repeat", backgroundSize: "cover" }} className="flex flex-col lg:flex-row items-center w-full mt-20 md:f mx-auto bg-no-repeat bg-cover text-white">
                 <div className=" flex-1 text-center py-10 md:py-16 lg:py-28 space-y-2  w-full">
                     <h1 className="text-3xl font-bold md:w-10/12 xl:w-8/12 mx-auto">LOGO</h1>
                     <h1 className="text-3xl font-bold md:w-10/12 xl:w-8/12 mx-auto">SUBSCRIBE US TO GET <span className="text-red-500 ">25% OFF</span> </h1>

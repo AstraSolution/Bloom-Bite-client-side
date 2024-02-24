@@ -9,7 +9,7 @@ const Root = () => {
             <div className="fixed w-full top-0 z-50">
                 <Navbar></Navbar>
             </div>
-            <div className="mt-[87px] lg:container mx-auto relative space-y-16 md:space-y-20">
+            <div className="mt-[87px] lg:f mx-auto relative space-y-16 md:space-y-20">
                 <Outlet></Outlet>
             </div>
             <Footer></Footer>

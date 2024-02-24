@@ -5,6 +5,10 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import AboutUsPage from "../Pages/AboutUsPage/AboutUsPage";
 import UserDashboard from "../Layout/Dashboard/Dashboard";
 import AddFood from "../Pages/AddFood/AddFood";
+import Menu from "../Pages/Menu/Menu"
+import ShoppingCart from "../Pages/Shopping Cart/ShoppingCart";
+import ComingSoonPage from '../Pages/Coming Soon Page/ComingSoonPage';
+import Reserve from "../Pages/Reserve/Reserve";
 
 
 const router = createBrowserRouter([
@@ -32,6 +36,10 @@ const router = createBrowserRouter([
             {
                 path: 'menu',
                 element: <Menu></Menu>
+            },
+            {
+                path: 'reserve',
+                element: <Reserve></Reserve>
             },
 
         ]
