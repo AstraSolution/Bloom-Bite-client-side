@@ -7,6 +7,13 @@ import UserDashboard from "../Layout/Dashboard/Dashboard";
 import AddFood from "../Pages/AddFood/AddFood";
 
 
+import UpdateFood from "../Components/UpdateFood/UpdateFood";
+import FeedBack from "../Pages/FeedBack/FeedBack";
+import OurServices from "../Pages/OurServices/OurServices";
+
+
+
+
 const router = createBrowserRouter([
     {
         path: '/',
@@ -30,8 +37,21 @@ const router = createBrowserRouter([
                 element: <ShoppingCart></ShoppingCart>
             },
             {
+
+                path: 'services',
+                element: <OurServices></OurServices>
+            },
+            {
+                path: 'cart',
+                element: (
+                    <PrivateRoute>
+                        <CartPage></CartPage>
+                    </PrivateRoute>
+                ),
+
                 path: 'menu',
                 element: <Menu></Menu>
+
             },
 
         ]
