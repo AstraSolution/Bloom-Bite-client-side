@@ -1,18 +1,13 @@
 import { createBrowserRouter } from "react-router-dom";
+import PrivateRoute from "./PrivateRoute";
 import Root from "../Layout/Root";
 import Home from "../Pages/HomePage/Home";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import AboutUsPage from "../Pages/AboutUsPage/AboutUsPage";
-import UserDashboard from "../Layout/Dashboard/Dashboard";
 import AddFood from "../Pages/AddFood/AddFood";
-
-
 import UpdateFood from "../Components/UpdateFood/UpdateFood";
 import FeedBack from "../Pages/FeedBack/FeedBack";
 import OurServices from "../Pages/OurServices/OurServices";
-
-
-
 
 const router = createBrowserRouter([
     {
@@ -24,6 +19,18 @@ const router = createBrowserRouter([
                 path: '/',
                 element: <Home></Home>,
             },
+            // {
+            //     path: 'register',
+            //     element: <RegisterPage></RegisterPage>
+            // },
+            // {
+            //     path: 'login',
+            //     element: <LoginPage></LoginPage>
+            // },
+            // {
+            //     path: 'contact-us',
+            //     element: <ContactUsPage></ContactUsPage>
+            // },
             {
                 path: 'about-us',
                 element: <AboutUsPage></AboutUsPage>
@@ -33,43 +40,30 @@ const router = createBrowserRouter([
                 element: <AddFood></AddFood>
             },
             {
-                path: 'cart',
-                element: <ShoppingCart></ShoppingCart>
+                path: 'updateFood',
+                element: <UpdateFood></UpdateFood>
             },
             {
-
+                path: 'feedback',
+                element: <FeedBack></FeedBack>
+            },
+            {
                 path: 'services',
                 element: <OurServices></OurServices>
             },
-            {
-                path: 'cart',
-                element: (
-                    <PrivateRoute>
-                        <CartPage></CartPage>
-                    </PrivateRoute>
-                ),
 
-                path: 'menu',
-                element: <Menu></Menu>
-
-            },
+            // {
+            //     path: 'cart',
+            //     element: (
+            //         <PrivateRoute>
+            //             <CartPage></CartPage>
+            //         </PrivateRoute>
+            //     ),
+            // },
 
         ]
     },
-    {
-        path: '/dashboard',
-        element: <UserDashboard></UserDashboard>,
-        children: [
-            {
-                path:'/dashboard',
-                element:<Home></Home>
-            }
-        ]
-    },
-    {
-        path: '/coming-soon',
-        element: <ComingSoonPage></ComingSoonPage>
-    }
+    
 ])
 
 export default router

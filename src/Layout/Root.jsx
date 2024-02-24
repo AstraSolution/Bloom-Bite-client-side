@@ -10,7 +10,6 @@ const Root = () => {
                 <Navbar></Navbar>
             </div>
             <div className="mt-[87px]">
-            <ScrollToTop />
                 <Outlet></Outlet>
             </div>
             <Footer></Footer>
