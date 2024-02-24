@@ -11,6 +11,7 @@ import AboutUsPage from "../Pages/AboutUsPage/AboutUsPage";
 import AddFood from "../Pages/AddFood/AddFood";
 import UpdateFood from "../Components/UpdateFood/UpdateFood";
 import FeedBack from "../Pages/FeedBack/FeedBack";
+import OurServices from "../Pages/OurServices/OurServices";
 const router = createBrowserRouter([
     {
         path: '/',
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
             {
                 path: 'feedback',
                 element: <FeedBack></FeedBack>
+            },
+            {
+                path: 'services',
+                element: <OurServices></OurServices>
             },
             {
                 path: 'cart',
