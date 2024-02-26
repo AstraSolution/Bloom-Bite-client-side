@@ -1,5 +1,4 @@
 import { createBrowserRouter } from "react-router-dom";
-import PrivateRoute from "./PrivateRoute";
 import Root from "../Layout/Root";
 import Home from "../Pages/HomePage/Home";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
@@ -7,7 +6,6 @@ import AboutUsPage from "../Pages/AboutUsPage/AboutUsPage";
 import AddFood from "../Pages/AddFood/AddFood";
 import UpdateFood from "../Components/UpdateFood/UpdateFood";
 import FeedBack from "../Pages/FeedBack/FeedBack";
-import OurServices from "../Pages/OurServices/OurServices";
 import LoginPage from "../Pages/LoginPage/LoginPage";
 import RegisterPage from "../Pages/RegisterPage/RegisterPage";
 import ContactUsPage from "../Pages/ContactUsPage/ContactUsPage";
@@ -51,10 +49,7 @@ const router = createBrowserRouter([
         path: "feedback",
         element: <FeedBack></FeedBack>,
       },
-      {
-        path: "services",
-        element: <OurServices></OurServices>,
-      },
+      
       {
         path: "cart",
         element: <Cart></Cart>,
