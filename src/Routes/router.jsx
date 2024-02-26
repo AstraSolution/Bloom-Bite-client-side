@@ -9,6 +9,8 @@ import Menu from "../Pages/Menu/Menu"
 import ShoppingCart from "../Pages/Shopping Cart/ShoppingCart";
 import ComingSoonPage from '../Pages/Coming Soon Page/ComingSoonPage';
 import Reserve from "../Pages/Reserve/Reserve";
+import Login from "../Pages/Login/Login";
+import Register from "../Pages/Register/Register";
 
 
 const router = createBrowserRouter([
@@ -40,6 +42,14 @@ const router = createBrowserRouter([
             {
                 path: 'reserve',
                 element: <Reserve></Reserve>
+            },
+            {
+                path: 'login',
+                element: <Login></Login>
+            },
+            {
+                path: 'register',
+                element: <Register></Register>
             },
 
         ]
