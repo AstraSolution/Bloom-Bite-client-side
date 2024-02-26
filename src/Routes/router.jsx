@@ -8,6 +8,9 @@ import ContactUsPage from "../Pages/ContactUsPage/ContactUsPage";
 import CartPage from "../Pages/CartPage/CartPage";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import AboutUsPage from "../Pages/AboutUsPage/AboutUsPage";
+import Blog from "../Components/Blog/Blog";
+import Gallery from "../Pages/Gellery/Gallery";
+import AddFood from "../Pages/AddFood/AddFood";
 
 
 
@@ -35,6 +38,18 @@ const router = createBrowserRouter([
             {
                 path: 'contact-us',
                 element: <ContactUsPage></ContactUsPage>
+            },
+            {
+                path: 'blog',
+                element: <Blog></Blog>
+            },
+            {
+                path: 'gallery',
+                element: <Gallery></Gallery>
+            },
+            {
+                path: 'addfood',
+                element: <AddFood></AddFood>
             },
             {
                 path: 'about-us',

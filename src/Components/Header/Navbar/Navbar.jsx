@@ -104,6 +104,36 @@ const Navbar = () => {
                                 </li>
                                 <li className="nav-item px-1 xl:px-3 py-2 flex items-center text-sm xl:text-base uppercase font-semibold  text-black dark:text-white duration-300 hover:opacity-75">
                                     <NavLink
+                                        to="/blog"
+                                        className={({ isActive, isPending }) =>
+                                            isPending ? "pending" : isActive ? "text-[#FF9D00]" : ""
+                                        }
+                                    >
+                                       Blog Page
+                                    </NavLink>
+                                </li>
+                                <li className="nav-item px-1 xl:px-3 py-2 flex items-center text-sm xl:text-base uppercase font-semibold  text-black dark:text-white duration-300 hover:opacity-75">
+                                    <NavLink
+                                        to="/gallery"
+                                        className={({ isActive, isPending }) =>
+                                            isPending ? "pending" : isActive ? "text-[#FF9D00]" : ""
+                                        }
+                                    >
+                                       Gallery Page
+                                    </NavLink>
+                                </li>
+                                <li className="nav-item px-1 xl:px-3 py-2 flex items-center text-sm xl:text-base uppercase font-semibold  text-black dark:text-white duration-300 hover:opacity-75">
+                                    <NavLink
+                                        to="/addfood"
+                                        className={({ isActive, isPending }) =>
+                                            isPending ? "pending" : isActive ? "text-[#FF9D00]" : ""
+                                        }
+                                    >
+                                     Add Food Page
+                                    </NavLink>
+                                </li>
+                                <li className="nav-item px-1 xl:px-3 py-2 flex items-center text-sm xl:text-base uppercase font-semibold  text-black dark:text-white duration-300 hover:opacity-75">
+                                    <NavLink
                                         to="/about-us"
                                         className={({ isActive, isPending }) =>
                                             isPending ? "pending" : isActive ? "text-[#FF9D00]" : ""
