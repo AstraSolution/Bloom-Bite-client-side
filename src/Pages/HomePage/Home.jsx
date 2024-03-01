@@ -16,6 +16,7 @@ const Home = () => {
             </section>
             <CardDetails></CardDetails>
             <SpecialOffer></SpecialOffer>
+            
         </div>
     );
 };
