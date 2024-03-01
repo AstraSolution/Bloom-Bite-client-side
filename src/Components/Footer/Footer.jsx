@@ -7,7 +7,7 @@ const Footer = () => {
             <svg
                     data-name="Layer 1"
                     xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 1200 150" // Adjusted viewBox height to make it lower
+                    viewBox="0 0 1200 150"
                     preserveAspectRatio="none"
                 >
                     <path
@@ -71,23 +71,8 @@ const Footer = () => {
                 </div>
             </div>
 
-            <div className="mt-20">
-                <div className="h-full flex items-center justify-center mb-5">
-                    <form className="w-96 relative">
-                        <input type="email" placeholder=""
-                            className="w-full text-gray-800 p-4 h-10 rounded-full focus:outline-none 
-                        focus:border border-pink-800" />
-                        <button
-                            type="Submit"
-                            className="bg-pink-400 px-8 py-2 rounded-full text-white
-                             absolute top-0 right-0"
-                            >
-                            Submit
-                        </button>
-                    </form>
-                </div>
-            </div>
-            <h6 className="text-center">&copy; Astra Solution  {Year}</h6>
+            
+            <h6 className="text-center mt-10">&copy; Astra Solution  {Year}</h6>
         </div>
     </footer>
     );
